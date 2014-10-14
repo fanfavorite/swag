@@ -1,6 +1,6 @@
 Swag.addHelper 'inflect', (count, singular, plural, include) ->
     count = parseFloat count
-    word = if count > 1 or count is 0 then plural else singular
+    word = if count != 1 then plural else singular
     if Utils.isUndefined(include) or include is false then word else "#{count} #{word}"
 , ['number', 'string', 'string']
 
